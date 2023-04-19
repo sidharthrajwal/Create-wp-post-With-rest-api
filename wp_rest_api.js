@@ -27,12 +27,12 @@ if( quickAddBtn ) {
 
 var userData = {
          
-            "username": "admin", 
-            "password": "admin@123", 
+            "username": "username", 
+            "password": "password", 
         }
 
 var AuthPost = new XMLHttpRequest();
- AuthPost.open("POST", "http://192.168.0.77/sidharth/neword/wp-json/jwt-auth/v1/token");
+ AuthPost.open("POST", "https://www.sid.com/wp-json/jwt-auth/v1/token");
   AuthPost.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
    AuthPost.setRequestHeader("Accept", "application/json;charset=UTF-8");
    AuthPost.send(JSON.stringify(userData));
@@ -43,7 +43,7 @@ if(AuthPost.readyState == 4) {
        console.log(tokken)
      var createPost = new XMLHttpRequest();
 
-        createPost.open("POST", "http://192.168.0.77/sidharth/neword/wp-json/wp/v2/posts");
+        createPost.open("POST", "https://www.sid.com/wp-json/wp/v2/posts");
 
         createPost.setRequestHeader("Authorization", "Bearer "+tokken);
         createPost.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
